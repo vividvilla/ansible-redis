@@ -45,6 +45,7 @@
     - (redis_pidfile|dirname).startswith('/var/run') or (redis_pidfile|dirname).startswith('/run')
 
 - name: set redis to start at boot
+  ignore_errors: yes
   service:
     name: "{{ redis_service_name }}"
     enabled: yes
